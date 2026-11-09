@@ -1,92 +1,29 @@
-choice = input("Выберите категорию (длина, масса, время, температура): ")
+print("Доступные единицы: мм, см, м, км, сек, мин, час, мл, л, м3")
 
-if choice == 1:
-    a1 = input("Из какой единицы (мм, см, м, км): ")
-    a2 = input("В какую единицу (мм, см, м, км): ")
-    value = float(input("Значение: "))
-    
-    if a1 == 1:
-        a3 = value
-    elif a1 == 2:
-        a3 = value * 10
-    elif a1 == 3:
-        a3 = value * 1000
-    elif a1 == 4:
-        a3 = value * 1000000
-    
-    if a2 == 1:
-        result = a3
-    elif a2 == 2:
-        result = a3 / 10
-    elif a2 == 3:
-        result = a3 / 1000
-    elif a2 == 4:
-        result = a3 / 1000000
-    
-    print("Результат:", result)
+a = input("Из какой единицы: ")
+b = input("В какую единицу:")
+c = float(input("Значение:"))
 
-elif choice == 2:
-    a1 = input("Из какой единицы (г, кг, т): ")
-    a2 = input("В какую единицу (г, кг, т): ")
-    value = float(input("Значение: "))
-    
-    if a1 == 1:
-        a3 = value
-    elif a1 == 2:
-        a3 = value * 1000
-    elif a1 == 3:
-        a3 = value * 1000000
-    
-    if a2 == 1:
-        result = a3
-    elif a2 == 2:
-        result = a3 / 1000
-    elif a2 == 3:
-        result = a3 / 1000000
-    
-    print("Результат:", result)
+if a == "мм": d = c * 0.001
+elif a == "см": d = c * 0.01
+elif a == "м": d = c * 1
+elif a == "км": d = c * 1000
+elif a == "сек": d = c * 1
+elif a == "мин": d = c * 60
+elif a == "час": d = c * 3600
+elif a == "мл": d = c * 0.001
+elif a == "л": d = c * 1
+elif a == "м3": d = c * 1000
 
-elif choice == 3:
-    a1 = input("Из какой единицы (сек, мин, час): ")
-    a2 = input("В какую единицу (сек, мин, час): ")
-    value = float(input("Значение: "))
-    
-    if a1 == "сек":
-        a3 = value
-    elif a1 == "мин":
-        a3 = value * 60
-    elif a1 == "час":
-        a3 = value * 3600
-    
-    if a2 == "сек":
-        result = a3
-    elif a2 == "мин":
-        result = a3 / 60
-    elif a2 == "час":
-        result = a3 / 3600
-    
-    print("Результат:", result)
+if b == "мм": d = d / 0.001
+elif b == "см": d = d / 0.01
+elif b == "м": d = d / 1
+elif b == "км": d = d / 1000
+elif b == "сек": d = d / 1
+elif b == "мин": d = d / 60
+elif b == "час": d = d / 3600
+elif b == "мл": d = d / 0.001
+elif b == "л": d = d / 1
+elif b == "м3": d = d / 1000
 
-elif choice == 4:
-    a1 = input("Из какой единицы (C, F, K): ")
-    a2 = input("В какую единицу (C, F, K): ")
-    value = float(input("Значение: "))
-    
-    if a1 == "C":
-        a3 = value
-    elif a1 == "F":
-        a3 = (value - 32) * 5 / 9
-    elif a1 == "K":
-        a3 = value - 273.15
-    
-    if a2 == "C":
-        result = a3
-    elif a2 == "F":
-        result = a3 * 9 / 5 + 32
-    elif a2 == "K":
-        result = a3 + 273.15
-    
-    print("Результат:", result)
-
-else:
-    print("Неизвестная категория")
+print(c, a, "=", d, b)
